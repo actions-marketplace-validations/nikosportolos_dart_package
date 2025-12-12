@@ -59,14 +59,12 @@ The `pub-credentials.json` will be generated in the default dart config folder i
 You can find it depending on your OS in the following directories:
 
 - On **Linux** _(see XDG specification)_
-
   - If `$XDG_CONFIG_HOME` is defined:
     - `$XDG_CONFIG_HOME/dart/pub-credentials.json`
   - else
     - `$HOME/.config/dart/pub-credentials.json`
 
 - On **MacOS** _(see [developer.apple.com](https://developer.apple.com))_
-
   - `~/Library/Application Support/dart/pub-credentials.json`
 
 - On **Windows**
@@ -90,8 +88,8 @@ Read more:
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
 | working_directory   | Specify the working directory where the workflow will run.                                                                                                                                            | false    | "."        |
 | sdk                 | Specify which SDK to use (dart, flutter).                                                                                                                                                             | false    | "dart"     |
-| dart_sdk            | Specify the Dart SDK version that will be used. </br> This input will be ignored if `sdk` is set to `flutter`.                                                                                        | false    | "3.4.4"    |
-| flutter_sdk         | Specify the Flutter SDK version that will be used. </br> This input will be ignored if `sdk` is set to `dart`.                                                                                        | false    | "3.22.3"   |
+| dart_sdk            | Specify the Dart SDK version that will be used. </br> This input will be ignored if `sdk` is set to `flutter`.                                                                                        | false    | "3.10.1"   |
+| flutter_sdk         | Specify the Flutter SDK version that will be used. </br> This input will be ignored if `sdk` is set to `dart`.                                                                                        | false    | "3.38.4"   |
 | analyze_directories | Specify the directories where [dart analyze](https://dart.dev/tools/dart-analyze) will run.                                                                                                           | false    | "lib test" |
 | line_length         | The line length to use with [dart format](https://dart.dev/tools/dart-format).                                                                                                                        | false    | "120"      |
 | concurrency         | Controls the number of test suites that runs [concurrently](https://pub.dev/packages/test#test-concurrency), meaning that multiple tests in independent suites or platforms can run at the same time. | false    | "4"        |
@@ -131,7 +129,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v4
-      - uses: nikosportolos/dart_package@v0.2.3
+      - uses: nikosportolos/dart_package@v0.2.4
 ```
 
 - ### Merge workflow
@@ -159,7 +157,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v4
-      - uses: nikosportolos/dart_package@v0.2.3
+      - uses: nikosportolos/dart_package@v0.2.4
         with:
           coverage: true
           codecov: true
@@ -190,7 +188,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v4
-      - uses: nikosportolos/dart_package@v0.2.3
+      - uses: nikosportolos/dart_package@v0.2.4
         with:
           coverage: true
           codecov: true
@@ -223,7 +221,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v4
-      - uses: nikosportolos/dart_package@v0.2.3
+      - uses: nikosportolos/dart_package@v0.2.4
         sdK: flutter
         flutter-sdk: 3.22.3
 ```
